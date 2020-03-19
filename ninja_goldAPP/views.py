@@ -1,5 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 
 def index(request):
-    return HttpResponse('Go ninja, go ninja, go')
+    return render(request, 'index.html')
 

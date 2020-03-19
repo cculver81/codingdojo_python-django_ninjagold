@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Project: Ninja Gold</title>
+    <style>
+        .outlined_totalG{
+            outline: 1px solid black;
+            width: 100px;
+            }
+
+        .outlined_places{
+            outline: 1px solid black;
+            }
+    </style>
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid text-center">
+        <h3>Project: Ninja Gold</h3>
+    </header>
+
+    <main class="container">
+    <div class="row form-group">
+        <label for="total_gold" class="control-label">Your Gold:</label>
+        <input type="text" id="total_gold" class="form-control input-sm">
+    </div>
+    <br>
+
+    <form>
+
+        <div class="row">
+            <div class="col-sm-3 outlined_places text-center">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+            </div>
+            <div class="col-sm-3 outlined_places text-center">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+            </div>
+            <div class="col-sm-3 outlined_places text-center">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+            </div>
+            <div class="col-sm-3 outlined_places text-center">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+            </div>
+        </div>
+        <br>
+
+        <div class="row form-group">
+            <label for="activities" class="control-label">Activities:</label>
+            <textarea id="activities" rows="4" cols="50" class="form-control">
+        </div>
+    </form> 
+    </main>
+</body>
+</html>
