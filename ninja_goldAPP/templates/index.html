@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Project: Ninja Gold</title>
     <style>
-        .outlined_totalG{
+        .outlined{
             outline: 1px solid black;
-            width: 100px;
             }
-
-        .outlined_places{
-            outline: 1px solid black;
+            
+        .activities_tbl{
+            max-height: 150px;
+            height: 150px;
+            overflow: auto;
             }
     </style>
 </head>
@@ -23,42 +24,55 @@
 
     <main class="container">
     <div class="row form-group">
-        <label for="total_gold" class="control-label">Your Gold:</label>
-        <input type="text" id="total_gold" class="form-control input-sm">
+        <div class="col-4">
+            <label for="total_gold" class="control-label">Your Gold:</label>
+            <input type="text" id="total_gold" class="form-control" value="{{ total_gold }}">
+        </div>
     </div>
     <br>
 
     <form>
 
         <div class="row">
-            <div class="col-sm-3 outlined_places text-center">
+            <div class="col outlined text-center mx-2">
                 <h3>Farm</h3>
                 <p>(earns 10-20 golds)</p>
-                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+                <button type="button" class="btn btn-primary my-3" onclick='window.location.href="http://localhost:8000/farm_click"'>Find Gold</button>
             </div>
-            <div class="col-sm-3 outlined_places text-center">
+            <div class="col outlined text-center mx-2">
                 <h3>Cave</h3>
                 <p>(earns 5-10 golds)</p>
-                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+                <button type="button" class="btn btn-primary my-3" onclick='window.location.href="http://localhost:8000/cave_click"'>Find Gold</button>
             </div>
-            <div class="col-sm-3 outlined_places text-center">
+            <div class="col outlined text-center mx-2">
                 <h3>House</h3>
                 <p>(earns 2-5 golds)</p>
-                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+                <button type="button" class="btn btn-primary my-3" onclick='window.location.href="http://localhost:8000/house_click"'>Find Gold</button>
             </div>
-            <div class="col-sm-3 outlined_places text-center">
+            <div class="col outlined text-center mx-2">
                 <h3>Casino</h3>
                 <p>(earns/takes 0-50 golds)</p>
-                <button type="button" class="btn btn-primary my-3">Find Gold</button>
+                <button type="button" class="btn btn-primary my-3" onclick='window.location.href="http://localhost:8000/casino_click"'>Find Gold</button>
             </div>
         </div>
         <br>
 
-        <div class="row form-group">
-            <label for="activities" class="control-label">Activities:</label>
-            <textarea id="activities" rows="4" cols="50" class="form-control">
+        <label for="activites" class="form-group">Activites</label>
+        <div class="row">
+            <div  class="col activities_tbl outlined mx-2">
+                <table id="activites" class="table table-borderless table-hover table-sm">
+
+                    <!-- ###This Code Works, Just need to print the list in reverse### 
+                        ###This Code Works, Just need to print the list in reverse###  -->
+                        {% for x in track_gold %}
+                            <tr><td>{{ x }}</td></tr>
+                        {% endfor %}
+                </table>
+            </div>
         </div>
     </form> 
     </main>
 </body>
 </html>
+
+
